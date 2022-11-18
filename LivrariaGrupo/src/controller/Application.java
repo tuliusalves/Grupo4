@@ -16,20 +16,25 @@ public class Application {
 		String titulo;
 		do {
 			if (opcao == 1) {
-				titulo = JOptionPane.showInputDialog("Digite o título do livro:");
-				String autor = JOptionPane.showInputDialog("Digite o autor do titulo");
-				biblioteca.adicionarLivro(autor, titulo);
+				
+				biblioteca.adicionarLivro();
 			} else if (opcao == 2) {
 				System.out.println("Imprimindo livros");
 				biblioteca.listarLivros(livros);
 			} else if(opcao==3) {
-				int id= (Integer.parseInt(JOptionPane.showInputDialog("Digite o id do livro que quer remover:")));
-				biblioteca.removerLivro(id);
+				titulo= (JOptionPane.showInputDialog("Digite o titulo do livro que quer remover:"));
+				biblioteca.removerLivro(titulo);
+			} else if(opcao ==4) {
+				int indice=(Integer.parseInt(JOptionPane.showInputDialog("Qual o Id do livro que "
+						+ "quer alterar")));
+				biblioteca.alterarLivros(indice);
+			}else if(opcao==5) {
+				biblioteca.buscarLivroTituloAutor();
 			}
 			// System.out.println("O que deseja fazer agora? ");
 			opcao = (Integer.parseInt(JOptionPane
-					.showInputDialog(" Oque deseja fazer agora?" + "\n1-Adicionar 2-Imprimir livros"
-							+ " 3-Remover livros 0-finalizar operação")));
+					.showInputDialog(" Oque deseja fazer agora?" + "\n 0-finalizar operação 1-Adicionar livro "
+							+ "\n 2-Imprimir livros 3-Remover livros \n 4-Alterar livro 5-Buscar livro(autor/titulo)")));
 		} while (opcao != 0 || opcao>3);
 
 	}

@@ -22,6 +22,9 @@ public class Livros {
 		idLivro=sequence++;
 		return idLivro;
 	}
+	public void setIdLivro(int idLivro) {
+		this.idLivro=idLivro;
+	}
 
 
 	public String getTitulo() {
