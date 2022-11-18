@@ -3,7 +3,9 @@ package dao;
 import model.Livros;
 
 public interface BibliotecaDAO {
-	public void adicionarLivro(String autor, String titulo);
-	public void removerLivro(int idLivro);
+	public void adicionarLivro();
+	public void removerLivro(String titulo);
 	public void listarLivros(Livros livro);
+	public void alterarLivros(int indice);
+	public void buscarLivroTituloAutor();
 }
